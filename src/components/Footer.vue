@@ -1,8 +1,6 @@
 <!-- template -->
 <template>
-  <div>
-    <h1>ホーム</h1>
-  </div>
+  <footer />
 </template>
 
 <!-- TypeScript -->
@@ -10,5 +8,5 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class HomeComponent extends Vue {}
+export default class FooterComponent extends Vue {}
 </script>

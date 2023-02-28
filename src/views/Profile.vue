@@ -1,7 +1,7 @@
 <!-- template -->
 <template>
   <div>
-    <h1>ホーム</h1>
+    <h1>プロフィール</h1>
   </div>
 </template>
 
@@ -10,5 +10,5 @@
 import { Component, Vue } from "vue-property-decorator";
 
 @Component
-export default class HomeComponent extends Vue {}
+export default class ProfileComponent extends Vue {}
 </script>
