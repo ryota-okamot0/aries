@@ -16,13 +16,10 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class HomeComponent extends Vue {
   private calendar() {
-    this.$router.push(
-      "calendar/month",
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      () => {},
-      // eslint-disable-next-line @typescript-eslint/no-empty-function
-      () => {}
-    );
+    this.$router.push({
+      name: "calendar",
+      params: { type: { hoge: 123, fuga: "xyz" } } as {}
+    });
   }
   private profile() {
     this.$router.push(

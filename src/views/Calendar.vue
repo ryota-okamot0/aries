@@ -1,14 +1,20 @@
 <!-- template -->
 <template>
-  <div>
-    <h1>カレンダー</h1>
-  </div>
+  <div>カレンダー[{{ type.hoge }}]</div>
 </template>
 
 <!-- TypeScript -->
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
+import { Component, Vue, Prop } from "vue-property-decorator";
 
 @Component
-export default class CalendarComponent extends Vue {}
+export default class CalendarComponent extends Vue {
+  @Prop({
+    required: true,
+    validator: (value: string) => {
+      return ["month", "week", "day"].includes(value);
+    }
+  })
+  private type!: string;
+}
 </script>
