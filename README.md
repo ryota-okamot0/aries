@@ -1,5 +1,10 @@
 # aries
 
+## Project URL
+```
+http://localhost:8080/
+```
+
 ## Project setup
 ```
 npm install
