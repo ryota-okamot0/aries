@@ -33,8 +33,13 @@
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
-  ],
+, "src/plugins/vuetify.js"  ],
   "exclude": [
     "node_modules"
+  ],
+  "types": [
+    "webpack-env",
+    "jest",
+    "vuetify",
   ]
 }
