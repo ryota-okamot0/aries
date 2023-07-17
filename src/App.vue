@@ -8,8 +8,8 @@
 
 <!-- TypeScript -->
 <script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-import FooterComponent from "@/components/Footer.vue";
+import { Component, Vue } from 'vue-property-decorator';
+import FooterComponent from '@/components/Footer.vue';
 
 @Component({
   components: {

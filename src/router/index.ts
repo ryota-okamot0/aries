@@ -1,59 +1,59 @@
-import Vue from "vue";
-import VueRouter, { RouteConfig } from "vue-router";
-import HomeComponent from "@/views/Home.vue";
-import CalendarComponent from "@/views/Calendar.vue";
-import ProfileComponent from "@/views/Profile.vue";
-import ShareComponent from "@/views/Share.vue";
-import SignInComponent from "@/views/SignIn.vue";
+import Vue from 'vue';
+import VueRouter, { RouteConfig } from 'vue-router';
+import HomeComponent from '@/views/Home.vue';
+import CalendarComponent from '@/views/Calendar.vue';
+import ProfileComponent from '@/views/Profile.vue';
+import ShareComponent from '@/views/Share.vue';
+import SignInComponent from '@/views/SignIn.vue';
 
 Vue.use(VueRouter);
 
 const routes: Array<RouteConfig> = [
   {
-    path: "/",
-    name: "home",
+    path: '/',
+    name: 'home',
     component: HomeComponent,
     meta: {
-      title: "home"
+      title: 'home'
     }
   },
   {
-    path: "/calendar/:type",
-    name: "calendar",
+    path: '/calendar/:type',
+    name: 'calendar',
     component: CalendarComponent,
     props: true,
     meta: {
-      title: "calendar"
+      title: 'calendar'
     }
   },
   {
-    path: "/profile",
-    name: "profile",
+    path: '/profile',
+    name: 'profile',
     component: ProfileComponent,
     meta: {
-      title: "profile"
+      title: 'profile'
     }
   },
   {
-    path: "/share",
-    name: "share",
+    path: '/share',
+    name: 'share',
     component: ShareComponent,
     meta: {
-      title: "share"
+      title: 'share'
     }
   },
   {
-    path: "/sign-in",
-    name: "sign-in",
+    path: '/sign-in',
+    name: 'sign-in',
     component: SignInComponent,
     meta: {
-      title: "sign-in"
+      title: 'sign-in'
     }
   }
 ];
 
 const router = new VueRouter({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes
 });
