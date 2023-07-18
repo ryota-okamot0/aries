@@ -6,8 +6,8 @@ module.exports = {
     plugins: [
       // ホットリロード時にstylelintを実行する
       new StyleLintPlugin({
-        files: ['src/**/*.{vue, scss}']
-      })
-    ]
-  }
+        files: ['src/**/*.{vue, scss}'],
+      }),
+    ],
+  },
 };

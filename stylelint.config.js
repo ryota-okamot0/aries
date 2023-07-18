@@ -5,10 +5,10 @@ module.exports = {
     'selector-pseudo-element-no-unknown': [
       true,
       {
-        ignorePseudoElements: ['v-deep']
-      }
+        ignorePseudoElements: ['v-deep'],
+      },
     ],
     'order/order': ['custom-properties', 'declarations'],
-    'order/properties-alphabetical-order': true
-  }
+    'order/properties-alphabetical-order': true,
+  },
 };
