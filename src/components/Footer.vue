@@ -62,7 +62,8 @@
 <!-- TypeScript -->
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import { profileMockData } from '@/store/profile';
+import { profileStore } from '@/store/profile';
+import constant from '@/consts/const';
 
 @Component
 export default class FooterComponent extends Vue {
@@ -88,7 +89,9 @@ export default class FooterComponent extends Vue {
   /**
    * サインインしているユーザー
    */
-  signInUser = profileMockData;
+  private get signInUser() {
+    return profileStore.profile;
+  }
 
   /**
    * メソッド名を指定してコンポーネントのメソッドを呼び出す
@@ -127,10 +130,15 @@ export default class FooterComponent extends Vue {
   }
 
   /**
-   * サインアウトする
+   * サインアウト
+   * signOut
+   *
+   * @param なし
+   * @return なし
    */
   private signOut() {
-    this.routerPush('/sign-in');
+    profileStore.profile = null;
+    this.routerPush(constant.DIR_SIGN_IN);
   }
 }
 </script>
