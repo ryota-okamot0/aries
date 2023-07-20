@@ -64,3 +64,16 @@ export const update = (profile: Profile) => {
   targetUser.themeColor = profile.themeColor;
   targetUser.hasAvatar = profile.hasAvatar;
 };
+
+/**
+ * ニックネームの部分一致検索
+ * searchUsers
+ *
+ * @param partOfNickname 部分一致検索ニックネーム
+ * @return sharedUserStore
+ */
+export const searchUsers = (partOfNickname: string) => {
+  return sharedUserStore.sharedUsers.filter(user =>
+    user.nickname.startsWith(partOfNickname),
+  );
+};
