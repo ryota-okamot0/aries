@@ -2,6 +2,7 @@ import '@/plugins/compositionApi';
 import { reactive } from '@vue/composition-api';
 import { SharedUser } from '@/store/sharedUserModel';
 import { Profile } from '@/store/profileModel';
+import constant from '@/consts/const';
 
 export const sharedUserMockData: SharedUser[] = [
   {
@@ -76,4 +77,28 @@ export const searchUsers = (partOfNickname: string) => {
   return sharedUserStore.sharedUsers.filter(user =>
     user.nickname.startsWith(partOfNickname),
   );
+};
+
+/**
+ * 指定ユーザーテーマカラー取得
+ * getThemeColor
+ *
+ * ユーザーIDに紐づくテーマカラーを返す
+ *
+ * @param string userId
+ *    ユーザーID
+ * @return string
+ *    カラーコード文字列
+ */
+export const getThemeColor = (userId: string) => {
+  // パラメータのユーザーIDと一致するユーザーを取得
+  const user = sharedUserStore.sharedUsers.find(user => user.userId === userId);
+
+  // ユーザーが取得できない場合はデフォルトのカラーコードを返す
+  if (!user) {
+    return constant.THEME_COLOR_DEFAULT;
+  }
+
+  // ユーザーが取得できたらユーザーのテーマカラーのカラーコードを返す
+  return user.themeColor;
 };
